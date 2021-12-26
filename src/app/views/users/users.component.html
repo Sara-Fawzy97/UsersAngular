@@ -1,0 +1,35 @@
+<form class="mt-2 container" #contactForm='ngForm'>
+    <div class="mb-3">
+        <label for="Input" class="form-label">User name</label>
+        <input type="text" class="form-control" id="Input" ngModel name="userName" #userName='ngModel' required placeholder=" Enter Your Name" minlength="3">
+        <div class="error " *ngIf="userName.touched && userName.invalid">
+            <div *ngIf="userName.errors?.['required']">*Username is required*</div>
+            <div *ngIf="userName.errors?.['minlength']">*Username minlength is 3*</div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="Input1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="Input1" placeholder="Enter Your Email" ngModel name="email" #email="ngModel" required email>
+        <div class="error " *ngIf="email.touched && email.invalid">
+            <div *ngIf="email.errors?.['required']">*Email is required*</div>
+            <div *ngIf="email.errors?.['email']">*Invalid email*</div>
+        </div>
+    </div>
+
+    <button type="submit " class="btn btn-primary ">Submit</button>
+</form>
+
+
+<div class="row mt-4">
+    <div class="col-sm-3 mt-3" *ngFor="let user of users">
+        <div class="card text-center">
+            <div class="card-body">
+                <h4 class="card-title">{{user.username}}</h4>
+                <h5 class="card-title">{{user.company.name}}</h5>
+                <h6 class="card-text">{{user.address.city}}</h6>
+                <p>{{"Lat:"+user.address.geo.lat}} {{"Lng:"+user.address.geo.lng}}</p>
+                <a routerLink="/singleUser/{{user.id}}" class="btn btn-primary">Detailes</a>
+            </div>
+        </div>
+    </div>
+</div>
