@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './views/users/users.component';
 import { SingleUserComponent } from './views/single-user/single-user.component';
 import { SingleUserService } from './services/single-user.service';
+import { UpdateUserComponent } from './views/update-user/update-user.component';
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    SingleUserComponent
+    SingleUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

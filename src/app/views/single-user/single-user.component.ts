@@ -13,7 +13,6 @@ export class SingleUserComponent implements OnInit {
 // id:string=
   constructor(private userService:SingleUserService,private router:ActivatedRoute ) { }
 id:string=this.router.snapshot.params['id']
-
 users:User={}
 
 getSingleUser(){
@@ -27,6 +26,8 @@ getSingleUser(){
 
   })
 }
+
+
 
 
 

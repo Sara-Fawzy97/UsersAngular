@@ -1,0 +1,14 @@
+<form class="mt-2 container" #myForm='ngForm' (ngSubmit)="updateUser(myForm.value)">
+    <div class=" mb-3 ">
+        <label for="title " class="form-label ">Username</label>
+        <input type="text " class="form-control" id="title" name="titleName" [(ngModel)]='user.username'>
+
+    </div>
+    <div class="mb-3 ">
+        <label for="Input1 " class="form-label ">Comapany Name</label>
+        <input type="text " class="form-control " id="Input1 " name="body " [(ngModel)]='user.company?.name!'>
+
+    </div>
+
+    <button type="submit " class="btn btn-primary ">Update</button>
+</form>

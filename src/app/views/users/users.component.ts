@@ -25,7 +25,23 @@ this.users=res
     }
   })
 }
- 
+
+addUsers(user:any){
+  this.userService.addUser(user).subscribe({
+    next:()=>{
+      console.log(user)
+      this.users.splice(0,0,user)
+    }
+  })
+}
+//  id,index
+deleteUser(user:any,i:number){
+this.userService.deleteUser(user).subscribe({
+  next:()=>{
+this.users.splice(i,1)
+  }
+})
+}
   ngOnInit(): void {
     this.getUsers()
   }
